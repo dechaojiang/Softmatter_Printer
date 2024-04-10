@@ -2,6 +2,13 @@
 
 Developed in [_Soft Matter Engineering Lab_](https://www.fst.um.edu.mo/personal/ieklei/), _University of Macau_
 
+!!!Caution: This repo is a fork of currently not available to the public printer development project without source files for demo only.
+For more details please contact:
+<p align="center">dechao.jiang@connect.um.edu.mo</p>
+or
+<p align="center">dcjiang@berkeley.edu</p>
+
+
 ## Introduction
 To utilize the capability of 3D printing to assist in the development and testing of new materials, a customizable platform is required that can accommodate different printing materials and commands. Here, we present the development of an __open-source__, high-performance 3D printing platform that enables printing from CAD designs using __customized soft materials__.
 
