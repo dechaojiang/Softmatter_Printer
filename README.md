@@ -60,7 +60,7 @@ OB1 Pneumatic Controller initialized!
 
 ### G-Code 
 - Please Generate your G-Code using [Slic3r](https://slic3r.org/download/) and limit the size of the model within 200x200x150
-![UM_logo in slic](https://github.com/Cheney823/CP_Printer/blob/main/Readme/UM_logo_slic.png)
+![UM_logo in slic](https://github.com/Cheney823/Softmatter_Printer/blob/main/Readme/UM_logo_slic.png)
 - **Path to G-Code in program**
 
   You will be asked for the path to the G-Code in the 3D printing mode of this program, there are two ways to provide the path:
