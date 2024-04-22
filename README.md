@@ -5,7 +5,7 @@ Developed in [_Soft Matter Engineering Lab_](https://www.fst.um.edu.mo/personal/
 **!!!Caution: This repo is a fork of currently not available to the public printer development project without source files for demo only.
 For more details please contact:**
 <p align="center">dechao.jiang@connect.um.edu.mo</p>
-or
+<p align="center">or</p>
 <p align="center">dcjiang@berkeley.edu</p>
 
 
