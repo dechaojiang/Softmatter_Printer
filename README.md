@@ -12,6 +12,8 @@ For more details please contact:**
 ## Introduction
 To utilize the capability of 3D printing to assist in the development and testing of new materials, a customizable platform is required that can accommodate different printing materials and commands. Here, we present the development of an __open-source__, high-performance 3D printing platform that enables printing from CAD designs using __customized soft materials__.
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/20_SUIoQqQw/0.jpg)](https://www.youtube.com/watch?v=20_SUIoQqQw)
+
 This 3D printing platform using 
 - [Microfluidic Flow Controller OB1](https://www.elveflow.com/microfluidic-products/microfluidics-flow-control-systems/ob1-pressure-controller/) by _Eleveflow_: Printing extrusion of materials using pneumatic force
 - 3-set of [ABB servo motors and E530 servo drive](https://new.abb.com/products/3AXD50001013349/e530-ec0s-1kw0-1): Actuator of motion in x,y,z axis
