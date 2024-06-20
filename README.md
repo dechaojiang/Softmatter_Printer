@@ -3,7 +3,6 @@
 Developed in [_Soft Matter Engineering Lab_](https://www.fst.um.edu.mo/personal/ieklei/), _University of Macau_
 
 **!!!Caution: This repo is a fork of currently not available to the public printer development project without source files for demo only.
-For more details please contact:** dechao.jiang@connect.um.edu.mo  or  dcjiang@berkeley.edu
 
 Lab community who seeking further improvement of this project can go to [Developer Guide](https://github.com/Cheney823/CP_Printer/blob/main/Readme/developer_guide.md)
 (restricted access, _Soft Matter Engineering Lab_ members only)
