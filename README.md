@@ -103,5 +103,5 @@ Perform the Calibration inside my software with caution!
 That's all the things you need to know before you start printing! Open my application and try to print something, you will be guided through parameter settings in the application. 
 ***
 
-For more details, please contact us!
+For more details, please reach out!
 ![contact_info](https://github.com/Cheney823/Softmatter_Printer/blob/main/Readme/contact_info_pic.png)
