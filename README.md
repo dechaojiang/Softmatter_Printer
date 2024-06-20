@@ -3,16 +3,17 @@
 Developed in [_Soft Matter Engineering Lab_](https://www.fst.um.edu.mo/personal/ieklei/), _University of Macau_
 
 **!!!Caution: This repo is a fork of currently not available to the public printer development project without source files for demo only.
-For more details please contact:**
-<p align="center">dechao.jiang@connect.um.edu.mo</p>
-<p align="center">or</p>
-<p align="center">dcjiang@berkeley.edu</p>
+For more details please contact:** dechao.jiang@connect.um.edu.mo  or  dcjiang@berkeley.edu
 
+Lab community who seeking further improvement of this project can go to [Developer Guide](https://github.com/Cheney823/CP_Printer/blob/main/Readme/developer_guide.md)
+(restricted access, _Soft Matter Engineering Lab_ members only)
 
 ## Introduction
 To utilize the capability of 3D printing to assist in the development and testing of new materials, a customizable platform is required that can accommodate different printing materials and commands. Here, we present the development of an __open-source__, high-performance 3D printing platform that enables printing from CAD designs using __customized soft materials__.
 
+**CLICK BELOW TO SEE DEMO VIDEO**
 
+[![High-performance 3D printing platform for Advanced Functional Materials](https://img.youtube.com/vi/20_SUIoQqQw/0.jpg)](https://www.youtube.com/watch?v=20_SUIoQqQw)
 
 This 3D printing platform using 
 - [Microfluidic Flow Controller OB1](https://www.elveflow.com/microfluidic-products/microfluidics-flow-control-systems/ob1-pressure-controller/) by _Eleveflow_: Printing extrusion of materials using pneumatic force
@@ -32,24 +33,45 @@ For more technical details: dechao.jiang@connect.um.edu.mo
 | Multimatertial support | 2 channels |
 | Material extrusion pressure | 0 ~ 8000 mPa|
 | G-Code Reading | 100,000 lines limit & accept linear description (G1) only |
-| z-axis calibration | manually operated by software |
+| z-axis calibration | manually setting by software |
+
+### Printing Samples
+![samples](https://github.com/Cheney823/Softmatter_Printer/blob/main/Readme/Printing%20samples.png)
 
 ***
 
 
-## User Guide
-Download the [Release](https://github.com/Cheney823/CP_Printer/releases/tag/CP_Printer) of this repo, and run the program AFTER you read this section.
+# User Guide
+## Installation
+Lab users can refer to this part when they need to reallocate this printer, daily user can directly goes to [Embedded Printing and Direct-ink-writting](https://github.com/Cheney823/CP_Printer/edit/main/README.md#embedded-printing-and-direct-ink-writting)
 ### Hardware Connection
 
-- Connect Microfluidic Flow Controller through USB cable to PC
-  - Establishing Connection between pressure source and Microfluidic Flow Controller: [User Guide OB1 Mk3](https://support.elveflow.com/helpdesk/attachments/48263070075)
-  - Please make sure the Microfluidic Flow Controller is activated
-  - Please open the pressure channel between the power source and the Microfluidic Flow Controller
-- Connect Motion Controller through etherNet to PC
-  - Please make sure the positioning system is activated
-  - The IP address of the connecting Ethernet port on the PC and Motion Controller should be **on the same segment** (Local IP of Motion Controller: 192.168.0.11). For example, You can [set IP](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/change-ip-address-network-adapter) of the Ethernet port on Lab PC to 192.168.0.123
+**Settle two Communication Cables**
+- Connect Microfluidic Flow Controller (OB1) through USB cable to PC
+- Connect Motion Controller (HPGS Controller) through etherNet to PC
+
+**Pressurize the system**
+1. Establishing Connection from the pressure source to the pressure inlet of Microfluidic Flow Controller OB1: [User Guide OB1 Mk3](https://support.elveflow.com/support/solutions/articles/48001225594-user-guide-ob1-mk3-))
+2. Design and connect the pressure path from the OB1 outlet to the printhead based on your need.
+3. Open the pressure channel between the power source and the Microfluidic Flow Controller
+
+### Software and Environmental Settings
+
+**For Microfluidic Flow Controller OB1:**
+1. Download [Elveflow SDK](https://www.elveflow.com/microfluidic-products/microfluidics-software/elveflow-software-sdk/)
+2. Install Elveflow Smart Interface (ESI)
+3. Install the Extra install for x64 Libraries (included in Elveflow SDK download)
+
+**For High-performance gantry stage:**
+- [Change the TCP/IP settings](https://support.microsoft.com/en-us/windows/change-tcp-ip-settings-bd0a07af-15f5-cd6a-363f-ca2b6f391ace#WindowsVersion=Windows_11) to the same segment of Motion Controller
+  - The Local IP address of the motion controller: 192.168.0.11
+  - You can set the IP address of the corresponding EthernNET port to static 192.168.0.123 (for example)
  
-A self-connection check is performed every time the program starts, A well-established connection outputs the following message in the terminal 
+### System self-check
+1. Turn on OB1 and HPGS after those steps above
+2. Download the [Release](https://github.com/Cheney823/CP_Printer/releases/tag/CP_Printer) of this repo, and run the program.
+ 
+A self-check is performed every time the program starts, A system that has well-established connection outputs the following message in the terminal 
 
 ```
 HPGS Connected
@@ -59,40 +81,28 @@ OB1 Pneumatic Controller initialized!
 **IF THE TERMINAL OUTPUT OTHER THINGS DURING STARTING PROCESS**
 1. Restart the program several times
 2. Contact maintainer
+***
 
+## Embedded Printing and Direct-ink-writing
 ### G-Code 
 - Please Generate your G-Code using [Slic3r](https://slic3r.org/download/) and limit the size of the model within 200x200x150
-![UM_logo in slic](https://github.com/Cheney823/Softmatter_Printer/blob/main/Readme/UM_logo_slic.png)
+
+<img src="https://github.com/Cheney823/CP_Printer/blob/main/Readme/UM_logo_slic.png" width="500">
+
 - **Path to G-Code in program**
 
-  You will be asked for the path to the G-Code in the 3D printing mode of this program, there are two ways to provide the path:
-  1. Relative path (easiest way)
-
-     Copy your G-Code to the root directory of the program and simply type the filename.gcode, for example:
-
+  You will be asked for the path to the G-Code in the 3D printing mode of this program, please drag the generated G-Code into the window
+  
      ```
-      Please enter the file address
-      File Address: UM_logo.gcode
-     ```
-     Remember to delete the G-Code file when you finish printing for simplicity
-  3. Full path
-     ```
+      For example:
       Please enter the file address
       File Address: C:\Cheney\Desktop\UM_logo.gcode
      ```
+### Calibration
+Perform the Calibration inside my software with caution!
+
 That's all the things you need to know before you start printing! Open my application and try to print something, you will be guided through parameter settings in the application. 
-
 ***
 
-## Developer Guide
-
-**THIS SECTION IS NOT YET READY**
-
-The development of this software for the printer was based on Visual Studio C++ 2022, and tested on Windows 11 (2024).
-
-**Key Infos for hardware communication:**
-<p align="center">OB1 ID: 02076A25</p>
-<p align="center">Stage Controller's local IP address: 192.168.0.11</p>
-
-**Resolve Dependencies**
-***
+For more details, please contact us!
+![contact_info](https://github.com/Cheney823/Softmatter_Printer/blob/main/Readme/contact_info_pic.png)
