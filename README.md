@@ -2,6 +2,8 @@
 
 Developed in [_Soft Matter Engineering Lab_](https://www.fst.um.edu.mo/personal/ieklei/), _University of Macau_
 
+Explore this printer in my [blog](https://dechaojiang.github.io/projects/fdm_printer/)
+
 **!!!Caution: This repo is a fork of currently not available to the public printer development project without source files for demo only.
 
 Lab community who seeking further improvement of this project can go to [Developer Guide](https://github.com/Cheney823/CP_Printer/blob/main/Readme/developer_guide.md)
